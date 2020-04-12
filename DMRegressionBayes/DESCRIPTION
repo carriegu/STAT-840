@@ -1,0 +1,39 @@
+Package: DMRegressionBayes
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Lijia",
+           family = "Wang",
+           role = c("aut", "cre"),
+           email = "l574wang@uwaterloo.ca",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person(given = "Yi Jia",
+           family = "Gu",
+           role = c("aut", "cre"),
+           email = "yjgu@uwaterloo.ca",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package provides fast options fitting the Dirichlet-Multinomial Regression using Bayes methods via the help of Stan.
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+Biarch: true
+Roxygen: list(markdown = TRUE)
+Depends: 
+    R (>= 3.4.0)
+Imports: 
+    methods,
+    Rcpp (>= 0.12.0),
+    rstan (>= 2.18.1),
+    rstantools (>= 2.0.0.9000),
+    optimCheck,
+    dirmult
+LinkingTo: 
+    BH (>= 1.66.0),
+    Rcpp (>= 0.12.0),
+    RcppEigen (>= 0.3.3.3.0),
+    rstan (>= 2.18.1),
+    StanHeaders (>= 2.18.0)
+SystemRequirements: GNU make
+Suggests: 
+    testthat
+RoxygenNote: 7.0.2
