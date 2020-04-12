@@ -19,7 +19,7 @@ DM_fit_Freq <- function(Y, X){
   # Construct the TMB object
   tmb_model = MakeADFun(data=c(model = "DMRegressionFreq", #which model to use
                                list(X=X, Y=Y)), 
-                        parameters=list(beta=beta0),DLL="DMRegressionFreq2_TMBExports")
+                        parameters=list(beta=beta0),DLL="DMRegressionFreq_TMBExports")
 
 
   #Optimization
