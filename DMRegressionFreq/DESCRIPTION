@@ -1,0 +1,34 @@
+Package: DMRegressionFreq
+Title: Fitting Dirichlet-Multinomial Regression Using Frequentist Methods
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Lijia",
+           family = "Wang",
+           role = c("aut", "cre"),
+           email = "l574wang@uwaterloo.ca",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person(given = "Yi Jia",
+           family = "Gu",
+           role = c("aut", "cre"),
+           email = "yjgu@uwaterloo.ca",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package provides fast options fitting the Dirichlet-Multinomial Regression using Frequentist methods via the help of TMB.
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+Imports: 
+    methods,
+    Rcpp (>= 0.12.0),
+    TMB,
+    RcppEigen,
+    optimCheck,
+    dirmult
+LinkingTo: 
+    Rcpp,
+    RcppEigen (>= 0.3.3.3.0),
+    TMB
+SystemRequirements: GNU make
+Suggests: 
+    testthat
+RoxygenNote: 7.0.2
