@@ -40,7 +40,7 @@ for(ii in 1:ntest) {
   # Systematic unit testing Part 1 (Likelihood check).
   # Construct the TMB object for this particular dataset
   ##
-  TMB_obj = DM_obj(X=X, Y=Y, beta=beta0)
+  TMB_obj = DM_obj_TMB(X=X, Y=Y, beta=beta0)
   ##
   # check that difference between R and TMB nll is the same constant
   # for any value of theta
