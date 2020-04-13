@@ -22,7 +22,7 @@ Depends:
 Imports: 
     methods,
     Rcpp (>= 0.12.0),
-    TMB,
+    TMB (>= 1.7.16),
     RcppEigen,
     rstan (>= 2.18.1),
     optimCheck,
