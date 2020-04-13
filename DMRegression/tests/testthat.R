@@ -1,4 +1,4 @@
 library(testthat)
-library(DMRegressionBayes)
+library(DMRegression)
 
-test_check("DMRegressionBayes")
+test_check("DMRegression")
