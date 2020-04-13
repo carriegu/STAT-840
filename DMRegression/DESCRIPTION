@@ -16,7 +16,6 @@ Description: This package provides fast options fitting the Dirichlet-Multinomia
 License: What license it uses
 Encoding: UTF-8
 LazyData: true
-Biarch: true
 Roxygen: list(markdown = TRUE)
 Depends: 
     R (>= 3.4.0)
@@ -26,7 +25,6 @@ Imports:
     TMB,
     RcppEigen,
     rstan (>= 2.18.1),
-    rstantools (>= 2.0.0.9000),
     optimCheck,
     dirmult
 LinkingTo: 
