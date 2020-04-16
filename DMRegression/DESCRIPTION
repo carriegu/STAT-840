@@ -12,6 +12,7 @@ Authors@R:
            role = c("aut"),
            email = "yjgu@uwaterloo.ca",
            comment = c(ORCID = "YOUR-ORCID-ID"))
+Maintainer: Lijia Wang <l574wang@uwaterloo.ca>
 Description: This package provides fast options fitting the Dirichlet-Multinomial Regression using either Frequentist or Bayes methods.
 License: GPL-3
 Encoding: UTF-8
