@@ -13,8 +13,8 @@ DM_obj_TMB <- function(Y, X, beta){
 
   # Construct the TMB object
   tmb_model = MakeADFun(data=c(model = "DMRegressionFreq", #which model to use
-                               list(X=X, Y=Y)), 
-                        parameters=list(beta=beta),DLL="DMRegressionFreq_TMBExports")
+                               list(X=X, Y=Y)),
+                        parameters=list(beta=beta),DLL="DMRegression_TMBExports")
 
   return(tmb_model)
 
