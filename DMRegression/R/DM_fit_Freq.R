@@ -3,9 +3,11 @@
 #'
 #' @param Y Matrix of `n x J` responses.
 #' @param X Matrix of `n x (P+1)` covariates.
+#' @param silent Whether or not to give verbose output.
+#' @param ... Additional arguments to [TMB::MakeADFun()].
 #' @return beta_hat the fitted matrix of `(P+1) x J` parameters and the corresponding Fisher-info.
 #' @export
-DM_fit_Freq <- function(Y, X){
+DM_fit_Freq <- function(Y, X, silent = TRUE, ...){
 
   # Extract some parameters
   n = nrow(Y)
@@ -18,8 +20,9 @@ DM_fit_Freq <- function(Y, X){
 
   # Construct the TMB object
   tmb_model = MakeADFun(data=c(model = "DMRegressionFreq", #which model to use
-                               list(X=X, Y=Y)), 
-                        parameters=list(beta=beta0),DLL="DMRegressionFreq_TMBExports")
+                               list(X=X, Y=Y)),
+                        parameters=list(beta=beta0), silent = silent, ...,
+                        DLL="DMRegression_TMBExports")
 
 
   #Optimization

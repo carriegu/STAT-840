@@ -40,7 +40,9 @@ for(ii in 1:ntest) {
   # Systematic unit testing Part 1 (Likelihood check).
   # Construct the Stan object for this specific dataset
   ##
-  Stan_obj <- DM_obj_Stan(X=X, Y=Y, chains=1, iterations=2000)
+  ## Stan_obj <- DM_obj_Stan(X=X, Y=Y, chains=1, iterations=2000)
+  Stan_obj <- DM_obj_Stan(X=X, Y=Y, chains=1, iterations=1,
+                          algorithm = "Fixed_param")
   ##
   lp_r=NULL
   lp_stan=NULL
@@ -62,21 +64,23 @@ for(ii in 1:ntest) {
   # for each test check that `min(abs_err, rel_err) < tol`
   # for each element of the solution beta_hat.
 
-  # fit the DM regression
-  Bayes_fit <- DM_fit_Bayes(Y=Y, X=X, iterations = 2000, chains = 1)
-  beta_hat = Bayes_fit$DM_point_est
+  if(FALSE) {
+    # fit the DM regression
+    Bayes_fit <- DM_fit_Bayes(Y=Y, X=X, iterations = 2000, chains = 1)
+    beta_hat = Bayes_fit$DM_point_est
 
-  # projection plots, except we don't plot, instead saving the output
-  # of each plot to an S3 object of type `optproj`.
-  oproj <- optim_proj(xsol = c(beta_hat),
-                      fun = function(beta)
-                        DM_negloglikelihood(Y = Y, X = X, beta = beta),
-                      maximize = FALSE, plot = FALSE)
+    # projection plots, except we don't plot, instead saving the output
+    # of each plot to an S3 object of type `optproj`.
+    oproj <- optim_proj(xsol = c(beta_hat),
+                        fun = function(beta)
+                          DM_negloglikelihood(Y = Y, X = X, beta = beta),
+                        maximize = FALSE, plot = FALSE)
 
-  # `diff` calculates the abs and rel error between the
-  # candidate solution `xsol` and the minimum in each projection plot.
-  # see ?diff.optcheck for details.
-  err <- abs(diff(oproj)) # abs and rel error
-  max_err[ii] <- max(pmin(err[,"abs"], err[,"rel"]))
-  expect_lt(max_err[ii],tol)
+    # `diff` calculates the abs and rel error between the
+    # candidate solution `xsol` and the minimum in each projection plot.
+    # see ?diff.optcheck for details.
+    err <- abs(diff(oproj)) # abs and rel error
+    max_err[ii] <- max(pmin(err[,"abs"], err[,"rel"]))
+    expect_lt(max_err[ii],tol)
+  }
 }

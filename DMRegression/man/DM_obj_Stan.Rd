@@ -4,12 +4,14 @@
 \alias{DM_obj_Stan}
 \title{Return the DMRegression Stan object constructed on the specific dataset}
 \usage{
-DM_obj_Stan(Y, X, iterations, chains)
+DM_obj_Stan(Y, X, iterations, chains, ...)
 }
 \arguments{
 \item{Y}{Matrix of \verb{n x J} responses.}
 
 \item{X}{Matrix of \verb{n x (P+1)} covariates.}
+
+\item{...}{Additional arguments to pass to \code{\link[rstan:sampling]{rstan::sampling()}}.}
 }
 \value{
 The Stan object constructed on the specific dataset

@@ -12,6 +12,6 @@ A DESCRIPTION OF THE PACKAGE
 Stan Development Team (2020). RStan: the R interface to Stan. R package version 2.19.3. https://mc-stan.org
 }
 \author{
-\strong{Maintainer}: Yi Jia Gu \email{yjgu@uwaterloo.ca} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Martin Lysy \email{mlysy@uwaterloo.ca}
 
 }

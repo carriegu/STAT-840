@@ -5,12 +5,16 @@
 \title{Estimate beta coefficients of the Dirichlet-Multinomial regression model
 using Frequentist approach.}
 \usage{
-DM_fit_Freq(Y, X)
+DM_fit_Freq(Y, X, silent = TRUE, ...)
 }
 \arguments{
 \item{Y}{Matrix of \verb{n x J} responses.}
 
 \item{X}{Matrix of \verb{n x (P+1)} covariates.}
+
+\item{silent}{Whether or not to give verbose output.}
+
+\item{...}{Additional arguments to \code{\link[TMB:MakeADFun]{TMB::MakeADFun()}}.}
 }
 \value{
 beta_hat the fitted matrix of \verb{(P+1) x J} parameters and the corresponding Fisher-info.

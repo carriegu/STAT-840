@@ -20,11 +20,11 @@ DM_fit_Bayes = function(Y, X, iterations, chains){
   DM_fit <- rstan::sampling(stanmodels$DMRegressionBayes, data = DM_data, iter = iterations,
                      verbose = TRUE, chains = chains)
 
-  DM_point_est <- get_posterior_mean(DM_fit) # The point estimation using posterior mean
+  DM_point_est <- rstan::get_posterior_mean(DM_fit) # The point estimation using posterior mean
   total_par_num = (P+1)*J
   DM_point_est <- c(DM_point_est)[c(1:total_par_num)]
   DM_point_est <- matrix(DM_point_est, nrow = P+1, ncol = J, byrow = TRUE)
-  DM_samples <- extract(DM_fit) # The MCMC samples
+  DM_samples <- rstan::extract(DM_fit) # The MCMC samples
 
   return(list(DM_point_est = DM_point_est, DM_samples = DM_samples))
 }
